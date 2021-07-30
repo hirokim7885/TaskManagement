@@ -1,6 +1,7 @@
 class TasksController < AuthController
 
   def index
+    @user = current_user
     @tasks = current_user.tasks.where(status: 0).order(created_at: :desc)
   end
 

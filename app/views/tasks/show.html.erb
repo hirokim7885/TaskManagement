@@ -11,9 +11,9 @@
     <p><%= @task.title %></P>
     <p><%= @task.body %></P>
     <p><%= @task.deadline %></P>
-    <p><%= @task.schedule.name %></P>
-    <p><%= @task.category %></P>
-    <p><%= @task.status %></P>
+    <p><%= @task.schedule.name_i18n %></P>
+    <p><%= @task.category_i18n %></P>
+    <p><%= @task.status_i18n %></P>
       <div class='task_edit'>
         <p><%= link_to '編集', edit_task_path(@task) %></P>
       </div>

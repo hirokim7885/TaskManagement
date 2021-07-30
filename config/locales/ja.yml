@@ -35,12 +35,14 @@ ja:
       category: カテゴリー
   enums:
     task:
+      category:
         privates: プライベート
         business: 仕事
-    status:
-        imcomplete: 作業未了
+      status:
+        incomplete: 作業未了
         complete: 作業完了
     schedule:
+      name:
         memo: 備忘
         usually: やや早
         early: なる早
