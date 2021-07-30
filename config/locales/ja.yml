@@ -1,0 +1,47 @@
+# ja:
+#   activerecord:
+#     models:
+#       user:　ユーザー
+#     attributes:
+#         id: ID
+#       name: 名前
+#       email: メールアドレス
+#       passsword: パスワード
+#       reset_password_sent_at: パスワード再発送日時
+#       created_at: 作成日時
+#       updated_at: 更新日時
+#     task:
+#       title: タイトル
+#       body: 内容
+#       category: カテゴリー
+#       deadline: 期限
+#       status:　作業状況
+
+
+ja:
+  activerecord:
+    models:
+      account: アカウント
+    attributes:
+      account:
+      id: ID
+      name: 名前
+      email: メールアドレス
+      password: パスワード
+      reset_password_sent_at: パスワード再発送日時
+      created_at: 作成日時
+      updated_at: 更新日時
+    task:
+      category: カテゴリー
+  enums:
+    task:
+        privates: プライベート
+        business: 仕事
+        imcomplete: 作業未了
+        complete: 作業完了
+    schedule:
+        memo: 備忘
+        usually: やや早
+        early: なる早
+
+      

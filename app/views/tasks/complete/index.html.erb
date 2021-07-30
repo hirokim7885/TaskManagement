@@ -1,0 +1,38 @@
+<!DOCUTYPE html>
+<html>
+  <head>
+    <div class="header">
+      <h2><%= link_to 'ホーム', root_path %></h2>
+      <h2><%= link_to 'アカウント', user_path(current_user.id) %></h2>
+      <h2><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></h2>
+    </div>
+  </head>
+  <body>
+    <h2 class="today">終わったタスク</h2>
+    <div class="menu_container"
+      <h2>メニュー</h2>
+        <p><%= link_to '今日のタスク', tasks_today_index_path %></p>
+        <p><%= link_to 'これからのタスク', tasks_tomorrow_index_path %></p>
+        <p><%= link_to 'プライベートのタスク', tasks_privates_path %></p>
+        <p><%= link_to '仕事のタスク', tasks_business_index_path %></p>
+        <p><%= link_to '終わったタスク', tasks_complete_index_path %></p>
+      </div>
+      <div class="task_container">
+      <h2 class="add_task">
+        <%= link_to "タスクの追加", new_task_path, class: "add_task" %>
+      </h2>
+      <ul>
+        <% @tasks.each do |task| %>
+        <li>
+          <%= link_to task.status, task_path(@tasks) %>
+          <%= link_to task.title, task_path(@tasks) %>
+          <%= link_to task.category, task_path(@tasks) %>
+          <%= link_to task.schedule.name, task_path(@tasks) %>
+          <%= link_to '削除', task_path(@tasks), method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
+        </li>
+        <% end %>
+      </ul>
+      </div>
+  </body>
+</html>
+

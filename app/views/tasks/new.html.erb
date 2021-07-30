@@ -1,0 +1,34 @@
+<!DOCUTYPE html>
+<html>
+  <head>
+    <div class="header">
+      <h2><%= link_to 'ホーム', root_path %></h2>
+      <h2><%= link_to 'アカウント', user_path(current_user.id) %></h2>
+      <h2><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></h2>
+    </div>
+  </head>
+  <body>
+    <%= form_with model: @task, url: tasks_path do |f| %>
+      <p>タイトル：
+        <%= f.text_field :title, placeholder: 'タイトル' %>
+      </P>
+      <p>内容：
+        <%= f.text_area :body, placeholder: '内容' %>
+        </P>
+      <p>期限（日時）
+        <%= f.datetime_local_field :deadline, placeholder: '期限（日時）' %>
+      </P>
+      <p>優先度：
+        <%= f.select :schedule_id, [['備忘', 1], ['やや早', 2], ['なる早', 3]]%>
+      </p>
+      <p>カテゴリー：
+        <%= f.select :category, [['プライベート', 'privates'], ['仕事', 'business']] %>
+      </P>
+      <p>タスク完了：
+        <%= f.select :status, [['作業未了', 'incomplete'], ['作業完了', 'complete']] %>
+      </P>
+      <p>
+        <%= f.submit %>
+      </P>
+      <% end %>
+  </body>
