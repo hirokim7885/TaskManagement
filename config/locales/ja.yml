@@ -37,6 +37,7 @@ ja:
     task:
         privates: プライベート
         business: 仕事
+    status:
         imcomplete: 作業未了
         complete: 作業完了
     schedule:
